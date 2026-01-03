@@ -20,7 +20,7 @@ app = FastAPI(
     title="YouTube Scrapper API",
     servers=[
         {
-            "url": "https://your-render-app.onrender.com",
+            "url": "https://youtube-scrapper-2.onrender.com",
             "description": "Production"
         }
     ]
