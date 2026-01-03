@@ -12,9 +12,33 @@ import uuid
 from fastapi import HTTPException
 from chat_model import get_chat_model, chat_model_invoke
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
+
 load_dotenv()
 
-app = FastAPI()
+app = FastAPI(
+    title="YouTube Scrapper API",
+    servers=[
+        {
+            "url": "https://your-render-app.onrender.com",
+            "description": "Production"
+        }
+    ]
+)
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "service": "YouTube Scrapper RAG API"
+    }
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # for now (lock later)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/scrape/{repo_name}")
 def create_session_vector_store(repo: str) -> dict:
