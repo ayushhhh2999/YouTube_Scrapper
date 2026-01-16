@@ -40,7 +40,7 @@ You are an expert at semantic search.
 
 Given the following conversation history,
 generate a single, concise search query that will retrieve
-the most relevant information from a GitHub repository.
+the most relevant informatio.
 
 Conversation:
 {chat_history}
@@ -62,7 +62,7 @@ Relevant repository context:
 {context}
 
 Using the context above, answer the user's latest question
-clearly and accurately.
+clearly and accurately dont use any /n,-,# just generate plain text strictly.
 """
     )
 
