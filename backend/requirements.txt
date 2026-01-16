@@ -14,3 +14,5 @@ python-dotenv
 pydantic
 requests
 youtube-transcript-api
+python-multipart
+pypdf
