@@ -9,7 +9,7 @@ from langchain_core.output_parsers import StrOutputParser
 def get_chat_model():
     return ChatGroq(
         model="openai/gpt-oss-20b",
-        temperature=0.7,
+        temperature=0.3,
         reasoning_format="parsed",
         max_retries=2,
     )
@@ -63,6 +63,8 @@ Relevant repository context:
 
 Using the context above, answer the user's latest question
 clearly and accurately dont use any /n,-,# just generate plain text strictly.
+Your answer should be based only on the provided context. If the context does not 
+contain the information needed to answer, say "I don't know based on the provided information."
 """
     )
 
